@@ -2,6 +2,12 @@
 
     if(array_key_exists("submit", $_POST)){
 
+        $link = mysqli_connect("localhost", "mein_tagebuch", "root", "");
+
+        if(mysqli_connect_error()){
+            die ("Die Verbindung zur Datenbank konnte nicht hergestellt werden!");
+        }
+
         $error = "";
 
         if(!$_POST['email']){
